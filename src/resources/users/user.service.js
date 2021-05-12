@@ -1,5 +1,13 @@
-const usersRepo = require('./user.memory.repository');
+import users from './user.memory.repository.js';
 
-const getAll = () => usersRepo.getAll();
+export class UserService {
+  constructor(usersRepository) {
+    this.usersRepository = usersRepository;
+  }
 
-module.exports = { getAll };
+  getAll() {
+    return this.usersRepository.getAll();
+  }
+}
+
+export default new UserService(users);
