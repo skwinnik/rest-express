@@ -23,4 +23,8 @@ export class MemoryRepository {
     this.data.splice(this.data.indexOf(entity), 1);
     return entity;
   }
+
+  async filter(fn) {
+    return this.data.filter(fn);
+  }
 }

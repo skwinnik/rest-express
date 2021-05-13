@@ -1,9 +1,11 @@
 import boardMemoryRepository from './board.memory.repository.js';
 import Board from './board.model.js';
+import _taskService from './tasks/task.service.js';
 
 class BoardService {
-  constructor(boardRepository) {
+  constructor(boardRepository, taskService) {
     this.boardRepository = boardRepository;
+    this.taskService = taskService;
   }
 
   async getAll() {
@@ -27,8 +29,9 @@ class BoardService {
   }
 
   async delete(id) {
+    await this.taskService.deleteByBoardId(id);
     return this.boardRepository.delete(id);
   }
 }
 
-export default new BoardService(boardMemoryRepository);
+export default new BoardService(boardMemoryRepository, _taskService);

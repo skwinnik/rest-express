@@ -3,6 +3,8 @@ import Validator from '../../common/validation/validator.js';
 import boardService from './board.service.js';
 import BoardDto from './dto/board.dto.js';
 
+import tasksRouter from './tasks/task.router.js';
+
 const router = express.Router();
 router
   .route('/')
@@ -32,5 +34,7 @@ router
     if (!board) return res.sendStatus(404);
     return res.status(204).json();
   });
+
+router.use('/:boardId/tasks', tasksRouter);
 
 export default router;

@@ -1,9 +1,11 @@
+import _taskService from '../boards/tasks/task.service.js';
 import repository from './user.memory.repository.js';
 import User from './user.model.js';
 
 export class UserService {
-  constructor(usersRepository) {
+  constructor(usersRepository, taskService) {
     this.usersRepository = usersRepository;
+    this.taskService = taskService;
   }
 
   async getAll() {
@@ -30,8 +32,9 @@ export class UserService {
   }
 
   async delete(id) {
+    await this.taskService.unassignTasksByUserId(id);
     return this.usersRepository.delete(id);
   }
 }
 
-export default new UserService(repository);
+export default new UserService(repository, _taskService);
