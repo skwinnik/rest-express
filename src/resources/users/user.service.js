@@ -1,6 +1,6 @@
 import _taskService from '../boards/tasks/task.service.js';
 import repository from './user.memory.repository.js';
-import User from './user.model.js';
+import User from './models/user.model.js';
 
 export class UserService {
   constructor(usersRepository, taskService) {

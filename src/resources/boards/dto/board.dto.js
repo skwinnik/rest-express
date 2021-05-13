@@ -1,12 +1,11 @@
 // @todo fix alias
 import Validator from '../../../common/validation/validator.js';
-import Column from '../column.model.js';
 
 export default class BoardDto extends Validator {
   constructor({ title, columns }) {
     super();
     this.title = title;
-    this.columns = columns && columns.map((c) => new Column(c));
+    this.columns = columns;
   }
 
   validate(errors) {

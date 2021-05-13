@@ -1,5 +1,5 @@
 import boardMemoryRepository from './board.memory.repository.js';
-import Board from './board.model.js';
+import Board from './models/board.model.js';
 import _taskService from './tasks/task.service.js';
 
 class BoardService {

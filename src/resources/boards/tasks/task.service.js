@@ -1,5 +1,5 @@
+import Task from './models/task.model.js';
 import taskMemoryRepository from './task.memory.repository.js';
-import Task from './task.model.js';
 
 class TaskService {
   constructor(taskRepository) {

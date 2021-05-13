@@ -1,7 +1,7 @@
-import Board from './resources/boards/board.model.js';
-import Column from './resources/boards/column.model.js';
-import Task from './resources/boards/tasks/task.model.js';
-import User from './resources/users/user.model.js';
+import Board from './resources/boards/models/board.model.js';
+import Column from './resources/boards/models/column.model.js';
+import Task from './resources/boards/tasks/models/task.model.js';
+import User from './resources/users/models/user.model.js';
 
 const user1 = new User({ name: 'Test 1', login: 'test1' });
 const user2 = new User({ name: 'Test 2', login: 'test2' });

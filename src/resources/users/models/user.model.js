@@ -13,8 +13,8 @@ export default class User {
     this.password = password;
   }
 
-  static toResponse(user) {
-    const { id, name, login } = user;
+  toResponse() {
+    const { id, name, login } = this;
     return { id, name, login };
   }
 }
