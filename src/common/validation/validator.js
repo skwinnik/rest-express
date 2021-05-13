@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable class-methods-use-this */
 import ValidationError from './validation.error.js';
 
 export default class Validator {
@@ -9,14 +7,13 @@ export default class Validator {
       if (!(instance instanceof Validator))
         throw new Error(`${Type.name} is not a Validator!`);
 
-      const errors = [];
-      instance.validate(errors);
+      const errors = instance.validate();
       if (errors.length > 0) return next(new ValidationError(errors));
       return next();
     };
   }
 
-  validate(errors) {
-    throw new Error('Not implemented');
+  validate() {
+    throw new Error(`${this.constructor.name}: Validate is not implemented`);
   }
 }

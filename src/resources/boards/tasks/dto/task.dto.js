@@ -11,9 +11,11 @@ export default class TaskDto extends Validator {
     this.columnId = columnId;
   }
 
-  validate(errors) {
+  validate() {
+    const errors = [];
     if (this.title == null) errors.push('title is required');
     if (this.order == null) errors.push('order is required');
     if (this.description == null) errors.push('description is required');
+    return errors;
   }
 }

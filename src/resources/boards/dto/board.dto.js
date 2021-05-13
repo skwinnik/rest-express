@@ -7,9 +7,11 @@ export default class BoardDto extends Validator {
     this.columns = columns;
   }
 
-  validate(errors) {
+  validate() {
+    const errors = [];
     if (this.title == null) errors.push('title is required');
     if (this.columns == null || !(this.columns instanceof Array))
       errors.push('columns is required and should be an array of Column');
+    return errors;
   }
 }

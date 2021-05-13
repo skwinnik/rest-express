@@ -8,9 +8,11 @@ export default class UserDto extends Validator {
     this.password = password;
   }
 
-  validate(errors) {
+  validate() {
+    const errors = [];
     if (this.login == null) errors.push('login is required');
     if (this.name == null) errors.push('name is required');
     if (this.password == null) errors.push('password is required');
+    return errors;
   }
 }
