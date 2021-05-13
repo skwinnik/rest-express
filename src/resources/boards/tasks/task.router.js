@@ -7,7 +7,7 @@ const router = express.Router({ mergeParams: true });
 router
   .route('/')
   .get(async (req, res) => {
-    const tasks = await taskService.getAll();
+    const tasks = await taskService.getByBoardId(req.params.boardId);
     res.status(200).json(tasks);
   })
   .post(Validator.forType(TaskDto), async (req, res) => {

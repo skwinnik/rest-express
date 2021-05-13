@@ -10,6 +10,10 @@ class TaskService {
     return this.taskRepository.getAll();
   }
 
+  async getByBoardId(boardId) {
+    return this.taskRepository.filter((t) => t.boardId === boardId);
+  }
+
   async create({ title, order, description, userId, boardId, columnId }) {
     return this.taskRepository.create(
       new Task({

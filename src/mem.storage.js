@@ -44,6 +44,16 @@ const task2 = new Task({
   boardId: board1.id,
   columnId: board1.columns[1].id,
 });
-const Tasks = [task1, task2];
+
+const task3 = new Task({
+  title: 'Task 3',
+  order: 1,
+  description: 'Description 3',
+  userId: user1.id,
+  boardId: board2.id,
+  columnId: board2.columns[1].id,
+});
+
+const Tasks = [task1, task2, task3];
 
 export { Users, Boards, Tasks };
