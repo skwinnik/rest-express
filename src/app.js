@@ -4,6 +4,7 @@ import path, { dirname } from 'path';
 import YAML from 'yamljs';
 import { fileURLToPath } from 'url';
 import userRouter from './resources/users/user.router.js';
+import boardRouter from './resources/boards/board.router.js';
 import validationErrorMiddleware from './common/validation/validation.error.middleware.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -23,6 +24,7 @@ app.use('/', (req, res, next) => {
 });
 
 app.use('/users', userRouter);
+app.use('/boards', boardRouter);
 app.use(validationErrorMiddleware());
 
 export default app;
