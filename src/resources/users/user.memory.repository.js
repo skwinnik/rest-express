@@ -1,6 +1,10 @@
-const getAll = async () => {
-  // TODO: mock implementation. should be replaced during task development
-  return [];
-};
+import { MemoryRepository } from '../../common/memory.repository.js';
+import { Users } from '../../mem.storage.js';
 
-module.exports = { getAll };
+class UserMemoryRepository extends MemoryRepository {
+  constructor({ data = [] } = {}) {
+    super({ data });
+  }
+}
+
+export default new UserMemoryRepository({ data: Users });
