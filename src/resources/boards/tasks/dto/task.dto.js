@@ -1,4 +1,3 @@
-// @todo fix alias
 import Validator from '../../../../common/validation/validator.js';
 
 export default class TaskDto extends Validator {
